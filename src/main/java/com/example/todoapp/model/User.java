@@ -24,8 +24,8 @@ public class User {
     private String email;
     @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}",
            message = "Must be minimum 6 characters, at least one letter and one number")
-            @Column(name = "password", nullable = false)
-            private String password;
+    @Column(name = "password", nullable = false)
+    private String password;
     @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
     private List<ToDo> myTodos;
     @ManyToMany
@@ -35,7 +35,8 @@ public class User {
     private List<ToDo> otherTodos;
     @ManyToOne
     @JoinColumn(name = "role_id")
-    private Role role;public User() {
+    private Role role;
+    public User() {
     }
 
     public long getId() {
